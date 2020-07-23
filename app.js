@@ -50,7 +50,7 @@ apartTwo.rooms = 4;
 console.log(apartTwo.rooms)
 console.log(apartOne.rooms)
 
-function User (name) {//constructer Function
+function User (name) {//constructor Functions
     // this
     this.name = name;
     // retun this
@@ -87,7 +87,7 @@ console.log(nick)
 console.log(nick.name)
 nick.myNameIs()
 
-// make a class
+// make a class Function
 
 class Car  {
     constructor( year, make, model, color) {
@@ -138,4 +138,40 @@ fetch('https://api.github.com/users/maestronick1')
 
 })
 
+// Promises
+// ES5: Part 1
 
+let isMomHappy = false;
+
+// Promise
+let willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            let phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // fulfilled
+        } else {
+            let reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+let willIGetNewPhone = new Promise((resolve, reject) =>{
+    if (isMomhappy) {
+        const phone = {
+            brand: "iphone",
+            color: "red"
+        }
+        resolve(phone);
+    }
+    else {
+        reject('No Phone');
+    }
+});
+
+willIGetNewPhone.then(result => {
+    console.log(result)
+});
